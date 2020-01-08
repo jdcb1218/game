@@ -1,0 +1,10 @@
+name = Generate Password
+description = Generate a password when adding a new user.
+core = 7.x
+configure = admin/config/people/accounts
+
+; Information added by Drupal.org packaging script on 2018-06-26
+version = "7.x-1.1"
+core = "7.x"
+project = "genpass"
+datestamp = "1530031732"

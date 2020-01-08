@@ -1,0 +1,85 @@
+<?php
+
+/**
+ * @file
+ * This is the file description for form custom ('PROCOLOMBIA').
+ *
+ * In this more verbose, multi-line description, you can specify what this
+ * file does exactly.
+ *
+ * @author Juan David Ceballos 
+ */
+
+/**
+ * Implements hook_uninstall().
+ */
+function trivia_uninstall() {
+  db_drop_table('quiz_starts_duplas');
+  db_drop_table('quiz_node_results_competition');
+  return drupal_set_message(t('Uninstall Module @trivia'), 'status', TRUE);
+}
+
+/**
+ * Implements hook_schema().
+ */
+function trivia_schema() {
+  $schema['quiz_node_results_competition'] = array(
+    'description' => 'This is a table for competition players',
+    'fields' => array(
+      'id' => array(
+        'description' => 'The row identifier.',
+        'type' => 'serial',
+        'unsigned' => TRUE,
+        'not null' => TRUE,
+        ),
+  	  'uid' => array(
+        'description' => 'Uid',
+        'type' => 'int',
+        'unsigned' => TRUE,
+        'not null' => TRUE,
+        'default' => 0,
+      ),
+      'uid_opponent' => array(
+        'description' => 'Uid Opponent',
+        'type' => 'int',
+        'unsigned' => TRUE,
+        'not null' => TRUE,
+        'default' => 0,
+      ), 
+      'winner_uid' => array(
+        'description' => 'Winner - Uid',
+        'type' => 'int',
+        'unsigned' => TRUE,
+        'not null' => TRUE,
+        'default' => 0,
+      ),
+      'created' => array(
+        'description' => 'The Unix timestamp created Duplas',
+        'type' => 'int',
+        'not null' => TRUE,
+        'default' => 0,
+    ),             
+	),
+    'primary key' => array('id'),
+  );
+
+  $schema['quiz_starts_duplas'] = array(
+    'description' => 'This is a table for Nº Indicative By Start Game',
+    'fields' => array(
+      'id' => array(
+        'description' => 'The row identifier.',
+        'type' => 'serial',
+        'unsigned' => TRUE,
+        'not null' => TRUE,
+        ),
+      'created' => array(
+        'description' => 'The Unix timestamp created Labels Duplas',
+        'type' => 'int',
+        'not null' => TRUE,
+        'default' => 0,
+    ),             
+  ),
+    'primary key' => array('id'),
+  );
+  return $schema;
+}

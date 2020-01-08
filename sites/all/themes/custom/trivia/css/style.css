@@ -1,0 +1,883 @@
+/**
+ * If using a CSS pre-processor, tell it to overwrite this file. If not, place
+ * your custom CSS modifications here.
+ */
+/*Agregar Fuente futura*/
+@font-face {
+    font-family: 'sabrosura';
+    src: url('../fonts/Sabrosura.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+
+}
+@font-face {
+    font-family: 'sabrosura_straing';
+    src: url('../fonts/SabrosuraStraight.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'futura_hv_btheavy';
+    src: url('../fonts/futura_heavy_font.woff2') format('woff2'),
+         url('../fonts/futura_heavy_font.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+}
+@font-face {
+    font-family: 'futura-book-ob';
+    src: url('../fonts/Futura-BookOblique.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'futura-book';
+    src: url('../fonts/Futura_Book_Italic_font.ttf') format('truetype');
+    src: url('../fonts/Futura-Book_1.ttf') format('truetype');
+    src: url('../fonts/Futura-BookOblique.ttf') format('truetype');
+    src: url('../fonts/FuturaLT-Book.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'futura_bold';
+    src: url('../fonts/futura_bold.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'futura_bold_italic';
+    src: url('../fonts/futura_bold_italic.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'futura_light';
+    src: url('../fonts/futura_light.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Robotobold';
+    src: url('../fonts/Roboto-Black.ttf') format('truetype'),
+         url('../fonts/Roboto-Bold.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+
+}
+@font-face {
+    font-family: 'Robotoitalic';
+    src: url('../fonts/Roboto-BlackItalic.ttf') format('truetype');
+    src: url('../fonts/Roboto-BoldItalic.ttf') format('truetype');
+    src: url('../fonts/Roboto-Italic.ttf') format('truetype');
+    src: url('../fonts/Roboto-LightItalic.ttf') format('truetype');
+    src: url('../fonts/Roboto-Roboto-MediumItalic.ttf') format('truetype');
+    src: url('../fonts/Roboto-ThinItalic.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'Roboto-regular';
+    src: url('../fonts/Roboto-Regular.ttf') format('truetype');
+    src: url('../fonts/Roboto-Medium.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Robotolight';
+    src: url('../fonts/Roboto-Thin.ttf') format('truetype');
+    src: url('../fonts/Roboto-Light.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+/* Estilos agregados para el juego*/
+@import url('https://fonts.googleapis.com/css?family=Roboto:100,300,300i,400,400i,500,500i,700,900&display=swap');
+
+.sinpadding[class*="col-"] {
+    padding                 : 0;
+}
+/* quitar estilo de espacios en boostrap*/
+.page-user-register .main-container .row section {
+    padding: 0;
+}
+.page-header,
+#navbar {
+    display                 : none;
+}
+  .tabs--primary.nav.nav-tabs {
+    display                 : none;
+    }
+    .view-gallery-intro{
+    background: 100% 100%;
+    background-size: cover;
+    background-repeat: no-repeat;
+    padding: 0 20% 0;
+    box-sizing: border-box;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-flex-direction: column;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    -webkit-justify-content: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    -webkit-align-items: center;
+    -ms-flex-align: center;
+    align-items: center;
+    height: 100vh;
+        }
+        .logo-img-trivia {
+            position        : absolute;
+            top             : 0;
+            left            : 0;
+            margin          : 5% 5%;
+            width           : 30%;            
+        }
+            .logo-img-trivia img{
+                width       : 100%;
+            }
+            .titulo-amarillo {
+                color: #FFFF1B;
+                text-align: center;
+                font-size: 2em;
+                line-height: 35px;
+                font-family: "futura_hv_btheavy";
+                letter-spacing: 2px;
+            }
+            .subtitulo-amarillo {
+                color: #FFFF1B;
+                text-align: center;
+                font-size: 1.5em;
+                line-height: 1.5;
+                font-family: "futura-book";
+                font-weight: 100;
+                margin: 2% 0%;
+            }
+    .bg-informacion{
+        background-image: url(../img/bg-trivia.jpg) !important;
+        background-repeat: no-repeat;
+        background-color: #a1a1a1!important;
+        background: 100% 100%;
+        background-size: 100%;
+        box-sizing: border-box;
+        padding: 0% 8% 0 !important;
+        border-left: 5px solid #FFFF1B;
+        display: -webkit-flex;
+        display: flex;
+        -webkit-flex-direction: column;
+        -ms-flex-direction: column;
+        flex-direction: column;
+        -webkit-justify-content: center;
+        -ms-flex-pack: center;
+        justify-content: center;
+        -webkit-align-items: center;
+        -ms-flex-align: center;
+        align-items: center;
+        height: 100vh;
+    }
+    .group-player h3 { display: none }
+    #field-info-player-add-more-wrapper {
+        color               : #FFFF1B;
+        font-size           : 3em;
+        font-family         : "sabrosura";
+        text-transform      : uppercase;
+        text-align          : left;
+    }
+    #field-information-player-add-more-wrapper p {
+        color: #fff;
+        font-family: "futura-book";
+        font-size: 1.5em;
+        text-align: justify;
+    }
+    #field-line-yellow-add-more-wrapper img {
+        width: 100%;
+    }
+    #field-line-yellow-add-more-wrapper {
+        width: 100%;
+    }
+    /* estilos formularios*/
+    .page-user-register .control-label {
+        color: #fff;
+        font-size: 1em;
+        font-family: "futura-book";
+        font-weight: 100!important;
+        margin-bottom: 0px;
+        letter-spacing: 1px;
+    }
+    
+    .page-user-register #edit-field-name, 
+    .page-user-register #edit-field-lastname{
+        width               : 47%;
+        display             : inline-block;
+        margin-right        : 3%;
+    }
+    .page-user-register #edit-field-lastname {
+        margin-left         : 3%;
+        margin-right        : 0%;
+    }
+
+    .page-user-register #edit-field-country-origin, 
+    .page-user-register #edit-field-country-residence{
+        width               : 47%;
+        display             : inline-block;
+        margin-right        : 3%;
+    }
+    .page-user-register #edit-field-country-residence{
+        margin-left         : 3%;
+        margin-right        : 0%;
+    }
+    .page-user-register #form-principal input,
+    .page-user-register #form-principal select{
+        background          : #fff;
+        border              : 1px solid #fff;
+        border-radius       : 0;
+    }
+    
+     /* ++++ ajustes checkbox 25 - 10 -19 */
+
+     .answering-form .form-radio {
+        opacity: 0;}
+     .user-info-from-cookie .form-group {
+        margin-bottom: 32px;}
+     .form-group:last-child, .panel:last-child {
+        margin-bottom: 0 !important;}   
+
+    .btn:focus, .btn:active:focus, .btn.active:focus, .btn.focus, .btn:active.focus, .btn.active.focus {
+    outline: none;}
+
+    input[type="checkbox"]:checked + span:before {
+        background: #00be9c;
+        content: "";
+        width: 10px;
+        height: 10px;
+        position: absolute;
+        left: 7px;
+        top: 7px;
+    }
+
+    .page-user-register #edit-field-terms-conditions-und {
+        display: none;
+    }
+        .page-user-register #edit-field-terms-conditions label{
+            position: relative;
+            padding-left: 35px;
+            font-size: 0.9em;
+        }
+        .page-user-register #edit-field-terms-conditions .form-item-field-terms-conditions-und label{
+            
+        }
+
+        .page-user-register #edit-field-terms-conditions label::before{
+            content: ' ';
+            border: solid 1px #ffffff;
+            width: 18px;
+            height: 18px;
+            position: absolute;
+            left: 0;
+            background: #fff;
+            margin: 3px;
+            }
+        .page-user-register #edit-field-terms-conditions input[type="checkbox"]:checked + label::before{
+            color: #00BD9C;
+            border-color: #00BD9C;
+            width: 0.5em;
+            height: 0.5em;
+        }
+        #edit-actions {
+            text-align: center;
+            width: 50%;
+            margin: 0 auto;
+        }
+            .page-user-register #edit-actions #edit-submit {
+                background-image: url(../img/btn-form.png) !important;
+                background-color: transparent;
+                border: transparent;
+                color: #000C89;
+                font-size: 2em;
+                font-family: "sabrosura";
+                width: 100%;
+                padding: 12%;
+                background-repeat: no-repeat;
+                background-size: cover;
+            }
+
+            .logout-trivia a {
+                background-image: url(../img/btn-logout.png)!important;
+                background-color: transparent;
+                display: block;
+                width: 194px;
+                height: 86px;
+                position: absolute;
+                left: 0px;
+                bottom: 20px;
+                font-size: 0;
+                cursor: pointer;
+            }
+            .form-item-field-terms-conditions-und a {
+                color: #fff;
+                position: relative;
+                top: -18px;
+                left: 24px;
+}
+
+        /* fin estilos formularios*/
+
+/* Inicio estilos pagina de Conteo */
+.node-type-quiz .row > section {
+    background-image    : url('../img/bg-total-trivia.jpg') !important;
+    background-size     : cover;
+    background-repeat   : no-repeat;
+    height              : 100vh !important;
+    position            : absolute;
+}
+.quiz-start-link,
+.submitted,
+.alert {
+    display: none;
+}
+
+#block-trivia-logo {
+    position        : absolute;
+    top             : 0;
+    left            : 0;
+    margin          : 2% 2%;
+    width           : 20%;            
+}
+    #block-trivia-logo img{
+        width       : 100%;
+    }
+    .node-type-quiz .row .region-content #block-system-main {
+        margin: 17% 10% 0;
+        text-align: center;
+    }
+    .get-ready-to-play {
+        font-size: 2em;
+        color: #ffffff;
+        font-family: "sabrosura";
+        line-height: 0;
+    }
+    .we-start {
+        font-size: 4em;
+        color: #ffffff;
+        font-family: "sabrosura";
+    }
+    #count-list {
+        color: #FF0;
+        line-height: 250px;
+        font-size: 4em;
+    }
+/* fin estilos pagina de Conteo */
+
+/* Inicio estilos pagina quiz */
+.page-node-take .countdown.jquery-countdown-processed.hasCountdown,
+.page-node-take .row form .quiz-question-multichoice .form-item,
+.page-node-take #quiz-progress,
+.page-node-take .breadcrumb {
+    display: none;
+}
+.page-node-take .row > section {
+    background-image: url('../img/bg-total-quiz.jpg') !important;
+    background-size: cover;
+    height: 100vh !important;
+    position: absolute;
+}
+.page-node-take .answering-form {
+    margin: 0 5%;
+    text-align: center;
+}
+.page-node-take .status-answer {
+    font-weight: 600;
+    font-family: "futura-book";
+    font-size: 1em;
+    text-transform: uppercase;
+}
+#block-system-main #quiz-question-answering-form h2 {
+    color: #FF3;
+    background-image: url(../img/no-pregunta.png) !important;
+    background-repeat: no-repeat;
+    font-family: "sabrosura";
+    padding: 1.7%;
+    position: relative;
+    margin: 0 auto;
+    top: 0px;
+    left: 0;
+    width: 12%;
+    background-size: contain;
+    font-size: 8em;
+}
+#block-system-main #quiz-question-answering-form .field-name-body {
+    color: #fff;
+    font-family: "futura-book";
+    font-size: 2em;
+    margin: 1% 0 0;
+}
+.page-node-take .table-responsive {
+        margin: 2% 0 0;
+    }
+/* ciculos acomodados */
+.page-node-take .multichoice-row {
+        display: inline-block;
+        background: transparent !important;
+        border: none !important;
+        max-width: 25% !important;
+        width: 13%;
+        text-align: center;
+        margin-right: 5%;
+    }
+    .page-node-take .multichoice-row td:first-child {
+        display: none;
+    }
+        .page-node-take .multichoice-row td{
+            border: none !important;
+            width: 1%;
+            padding: 12px;
+        }
+        .page-node-take .multichoice-row td img{
+                overflow: hidden;
+                border-radius: 800px;
+                margin-bottom: 15%;
+                width: 90%;
+            }
+            .page-node-take .multichoice-row td p{
+                color: #ffffff;
+                font-family: "futura-book";
+                font-size: 1.5em;
+                letter-spacing: 1px;
+                line-height: 1.7;
+            }
+            .page-node-take .multichoice-row td .letter p{
+                color: #ffffff;
+                font-family: "futura-bold";
+                font-size: 2em;
+                letter-spacing: 1px;
+                text-transform: lowercase;
+                line-height: 1.7;
+            }
+            .page-node-take .multichoice-row td .letter .cont-opciones {
+                color: #ffffff;
+                font-family: "futura_hv_btheavy";
+                font-size: 1em;
+                letter-spacing: 1px;
+            } 
+            .page-node-take #edit-navigation-submit {
+                background-image: url(../img/bg-boton-regitro.png) !important;
+                background-color: transparent;
+                border: transparent;
+                color: #000C89;
+                font-size: 2em;
+                font-family: "sabrosura";
+                width: 23%;
+                padding: 1.6%;
+                background-repeat: no-repeat;
+                background-size: cover;
+            }
+            .page-node-take .cont-opciones {
+                width: 100%;
+                position: relative;
+                height: auto;
+            }
+                .page-node-take .cont-opciones img {
+                    width: 100%;
+                }
+                .page-node-take .img-borde {
+                    background-repeat: no-repeat;
+                    position: absolute;
+                    width: 100%;
+                    background-image: url('../img/sin-respuesta.png');
+                    z-index: 10;
+                    height: 105%;
+                    background-size: contain;
+                    top: -6%;
+                    left: 1%;
+                }
+                .img-borde.correcta{
+                    background-image: url('../img/respuesta-acertada.png') !important;
+                }
+                .img-borde.incorrecta{
+                    background-image: url('../img/respuesta-erronea.png') !important;
+                }
+                    
+        .page-node-take .multichoice-row td .cont-img-quiz {
+            position: relative;     
+        }
+            .page-node-take .multichoice-row td .letter {
+                position: absolute;
+                top: 0;
+                left: 0;
+                z-index: 100;
+                background: #2F90F4;
+                border-radius: 50px;
+                height: 29%;
+                width: 30%;
+                border: 5px solid #FFFF00;
+            }
+                .page-node-take .cont-img-quiz .letter.correcta{
+                    background-image: url('../img/respuesta-acertada.png') !important;
+                    background: #00D8B2;
+                }
+                .page-node-take .cont-img-quiz .letter.incorrecta{
+                    background-image: url('../img/respuesta-erronea.png') !important;
+                    background: #FF0093;
+                }
+        .quiz-question-truefalse .form-item.form-type-radio.radio {
+            display: inline-block;
+            margin: 2%;
+            width: 15%;
+        }
+            .quiz-question-truefalse .form-item.form-type-radio.radio:last-child {
+                display: none;
+            }
+            .quiz-question-truefalse .control-label {
+                background: #30a5f9;
+                border-radius: 10em;
+            }
+/*------MODAL-----*/                
+    #myModal {
+        padding: 7% 23%;
+        background: rgba(0, 0, 0, 0.6);
+    }
+        .modal-open #myModal p{
+            margin: 0 10% 0;
+            color: #fff;
+            font-family: "futura-book";
+            font-size: 2em;
+        }
+        .modal-open #myModal .cont-img-quiz {
+            position: relative;
+            width: 20%;
+            height: 35%;
+            margin: 0 auto;
+        }
+            .modal-open #myModal .imagen-quiz {
+                width: 100%;
+                margin: 12% auto;
+                position: relative;
+            }
+                .modal-open #myModal .imagen-quiz img {
+                    width: 100%;
+                    height: auto;
+                    border-radius: 10em;
+                    overflow: hidden;
+                    padding: 22px;
+                }
+                .modal-open #myModal .imagen-quiz .img-borde {
+                    background-repeat: no-repeat;
+                    position: absolute;
+                    width: 88%;
+                    background-image: url(../img/sin-respuesta.png);
+                    z-index: 10;
+                    height: 100%;
+                    background-size: contain;
+                    top: -6%;
+                    left: 1%;
+                }
+                    .modal-open #myModal .cont-img-quiz .img-borde {
+                        top: 4%;
+                        left: 6%;
+                    }
+                .modal-open .page-node-take  #myModal .imagen-quiz .img-borde {
+                    background-repeat: no-repeat;
+                    position: absolute;
+                    width: 100%;
+                    background-image: url(../img/sin-respuesta.png);
+                    z-index: 10;
+                    height: 100%;
+                    background-size: contain;
+                    top: -1%;
+                    left: 10%;
+                    margin: 0 auto;
+                }
+            .modal-open #myModal .letter {
+                position: absolute;
+                top: 10px;
+                left: 20px;
+                z-index: 100;
+                background: #2F90F4;
+                border-radius: 10em;
+                height: 50px;
+                width: 50px;
+                border: 5px solid #FFFF00;
+            }
+                .modal-open #myModal .letter p {
+                    font-family: "futura_hv_btheavy";
+                    font-size: 2em;
+                    letter-spacing: 0.5px;
+                    text-align: center;
+                    color: #fff;
+                    padding: 0;
+                    margin: 0;
+                }
+                .page-node-take #myModal #edit-navigation-submit {
+                    background-image: url(../img/bg-boton-regitro.png) !important;
+                    background-color: transparent;
+                    border: transparent;
+                    color: #000C89;
+                    font-size: 2em;
+                    font-family: "sabrosura";
+                    width: 27%;
+                    padding: 1.4%;
+                    background-repeat: no-repeat;
+                    background-size: cover;
+                    margin-top: 4%;
+                }
+        .modal-open .page-node #myModal p img:first-child{
+            border-radius: 50px;
+            border: 0px;
+        }
+        .modal-open .page-node #myModal p img:last-child{
+            background-repeat: no-repeat;
+            position: absolute;
+            width: 105%;
+            background-image: url('../img/sin-respuesta.png');
+            z-index: 10;
+            height: 105%;
+            background-size: contain;
+            top: -3%;
+            left: -1%;
+            border-radius: 10em;
+        }
+        
+/* ocultar o mostrar boton, segun opcion*/
+    .page-node-take #edit-navigation {
+        display: none;
+    }
+/* Fin estilos pagina quiz */
+
+/* Animacion Linea Regresiva */
+#block-trivia-logo .block-title {
+    display: none;
+}
+#block-trivia-time h2.block-title {
+    background: #fff;
+    width: 15%;
+    border: 9px solid #00BD9C;
+    border-radius: 10em;
+    padding: 2%;
+    position: absolute;
+    margin: 7% -12%;
+    z-index: 1;
+}
+#block-trivia-time {
+    position: relative;
+    top: 0;
+    left: 0;
+    width: 25%;
+    margin: 0 auto;
+}
+.progress {
+    height: 29px;
+    margin-bottom: 20px;
+    overflow: hidden;
+    background-color: #00BD9C;
+    border-radius: 10em;
+    -webkit-box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.1);
+    box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.1);
+    position: relative;
+    margin: 12% 0;
+    padding: 1.1% 1%;
+}
+.progress-bar-info{
+    background-color: #03FFD3!important;
+    padding: 1% 0!important;
+    box-sizing: border-box;
+    height: 100%;
+    border-radius: 10em;
+}
+  .progressbar .inner {
+        border-radius: 15px;
+        height: 15px;
+        animation: progressbar-countdown;
+            animation-duration: 0s;
+            animation-timing-function: ease;
+            animation-iteration-count: 1;
+            animation-fill-mode: none;
+            animation-play-state: running;
+        animation-duration: 40s;
+        animation-iteration-count: 1;
+        animation-fill-mode: forwards;
+        animation-play-state: paused;
+        animation-timing-function: linear;
+  }
+  @keyframes progressbar-countdown {
+    0% {
+      width: 100%;
+      background: #03ffd3;
+    }
+    100% {
+      width: 0%;
+      background: #03ffd3;
+    }
+  }
+
+/* Inicio estilos pagina tu compañero no ha terminado*/
+.page-reply .row > section {
+    background-image: url('../img/bg-total-quiz.jpg') !important;
+    background-size: cover;
+    height: 100vh !important;
+    position: absolute;
+}
+.page-reply .row .region-content{
+    margin: 15% 5%;
+    text-align: center;
+}   .page-reply .row .region-content .intervalos-tiempo .wait-time-please{
+        color: #ffffff;
+        font-size: 3.5em;
+        font-family: "futura_light";
+        letter-spacing: 1.5px;
+        text-transform: uppercase;
+    }  
+
+    .page-reply .row .region-content .intervalos-tiempo #time-execution{
+        color: #ffffff;
+        font-size: 3.5em;
+        font-family: "futura_bold";
+        letter-spacing: 1.5px;
+        text-transform: uppercase;
+}  
+/* FIN estilos pagina tu compañero no ha terminado*/
+/* Inicio estilos pagina Ganador*/
+.page-winning-player .row span.views-label.views-label-view,
+.page-winning-player .row .views-label .views-label-view, 
+.page-winning-player .row .breadcrumb{
+    display: none;
+}
+.page-winning-player .main-container .row section .region .views-row-first .col-md-6 {
+    padding: 0;
+    border-right: 5px solid yellow;
+}
+.page-winning-player .row .item-list ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+.page-winning-player .view-gallery-intro{
+    background: 100% 100%;
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 100vh!important;
+    position: relative;
+    box-sizing: border-box;
+}
+    .page-winning-player .container-fluid,
+    .page-winning-player .row > section{ 
+        padding: 0;
+        overflow: hidden;
+    }
+    .page-winning-player .row .item-list ul li .col-md-6:last-child {
+        background-image: url(../img/bg-trivia-ganador.jpg) !important;
+        background-size: cover;
+        text-align: center;
+        box-sizing: border-box;
+        display: -webkit-flex;
+        display: flex;
+        -webkit-flex-direction: column;
+        -ms-flex-direction: column;
+        flex-direction: column;
+        -webkit-justify-content: center;
+        -ms-flex-pack: center;
+        justify-content: center;
+        -webkit-align-items: center;
+        -ms-flex-align: center;
+        align-items: center;
+        height: 100vh;
+    }
+
+    .page-winning-player .name-winner {
+        font-family: "futura_hv_btheavy";
+        color: #fff;
+        font-size: 2em;
+        letter-spacing: 2px;
+        text-transform: uppercase;
+        margin-top: 1%;
+    }
+    .page-winning-player .winner-text {
+        font-family: 'futura-book';
+        color: #FFFF00;
+        font-size: 2.5em;
+        letter-spacing: 2px;
+        text-transform: uppercase;
+    }
+    .page-winning-player .line-winner {
+        margin: 2%;
+    }
+    .page-winning-player .time-winner {
+        font-family: 'futura-book';
+        color: #ffffff;
+        font-size: 2em;
+        letter-spacing: 2px;
+        text-transform: uppercase;
+    }
+    .page-winning-player .ost-player, 
+    .page-winning-player .info-answers {
+        font-size: 2em;
+        font-family: 'futura-book';
+    }
+        .page-winning-player .lost-player .quantity-correct-answer,
+        .page-winning-player .lost-player .correct-text,
+        .page-winning-player .info-answers .quantity-correct-answer,
+        .page-winning-player .info-answers .correct-text {
+            display: inline-block;
+            color: #00F5CA;
+        }
+        .page-winning-player .lost-player .quantity-incorrect-answer,
+        .page-winning-player .lost-player .incorrect-text,
+        .page-winning-player .info-answers .quantity-incorrect-answer,
+        .page-winning-player .info-answers .incorrect-text {
+            display: inline-block;
+            color: #FF4887;
+        }
+        .views-field.views-field-php-2 {
+        display: inline-block;
+        width: 34%;
+        margin: 4% 4% 0 0;
+}
+        .page-winning-player #trivia-replay-form #edit-submit {
+        background: url(../img/bg-btn-new-game.png);
+        width: 100%;
+        height: auto;
+        color: #ffffff;
+        font-family: "futura_hv_btheavy";
+        font-size: 1.8em;
+        padding: 7% 0;
+        background-size: cover;
+        background-repeat: no-repeat;
+        border: none;
+        margin: 1% 0;
+        cursor: pointer;
+        text-transform: uppercase;
+    }
+    .page-winning-player .btn-new-user {
+        background: url(../img/bg-btn-new-user.png);
+        width: 34%;
+        height: auto;
+        color: #ffffff;
+        font-family: "futura_hv_btheavy";
+        font-size: 2em;
+        padding: 2% 0;
+        background-size: cover;
+        background-repeat: no-repeat;
+        border: none;
+        margin: 4% 0 0 4%;
+        cursor: pointer;
+        text-transform: uppercase;
+        display: inline-block;
+    }
+    .page-winning-player .btn-new-user a{
+        text-decoration: none;
+        color: #ffffff;
+    }
+    .page-winning-player .linea-amarilla {
+         margin: 3% 0;
+    }
+        /*ocultar botones back trivia*/
+    .page-node-take button#edit-navigation-back,.form-actions em, button[value=back], .form-actions button[value=back]{
+       display:none;
+    } 
+/* FIN Estilos agregados para el juego*/
+
+
+

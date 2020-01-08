@@ -1,0 +1,180 @@
+<?php
+
+include_once 'includes/api.inc';
+include_once 'includes/trivia-block.inc';
+include_once 'includes/trivia-form.inc';
+
+/**
+ * Implements hook_init().
+ */
+function trivia_init() {
+  // Redirect Trivia.
+  trivia_reidrect();
+
+  Global $user;
+  if(!in_array('administrator', $user->roles) && arg(0) == 'user' && is_numeric(arg(1)) && arg(2) == 'edit'){
+    drupal_goto('informacion-colombia');
+  }
+  if (current_path() == 'reply'){
+    $settings = array(
+      'trivia' => array(
+        'path' => drupal_get_path('module', 'trivia') . '/includes/request.inc',
+      ),
+    );
+    drupal_add_js(drupal_get_path('module', 'trivia') . '/js/' . 'script.js');
+    drupal_add_js($settings, 'setting');
+  }
+ 
+  if (current_path() == 'user/register') {
+      trivia_label_player_game(); // Add Label Nº By Start Game
+  }
+}
+
+/**
+ * Implements hook_field_formatter_info().
+ */
+function trivia_field_formatter_info() {
+    $info = array(
+      'count' => array(
+        'label' => t('Count Trivia'), 
+        'field types' => array('list_boolean'),
+        'description' => t('Start Trivia By Count'),
+      ), 
+    );
+    return $info; 
+}
+
+/**
+ * Implements hook_field_formatter_view().
+ */
+function trivia_field_formatter_view($entity_type, $entity, $field, $instance, $langcode, $items, $display) {
+  $element = array();
+    switch ($display['type']) {
+      case 'count':
+        foreach ($items as $delta => $item) {
+          $element[$delta] = array(
+            '#theme' => 'trivia_count', 
+          );
+       }
+        break;
+    }
+  return $element; 
+}
+
+
+/**
+ * Implements hook_help().
+ */
+function trivia_help($path, $arg) {
+  switch ($path) {
+    case 'admin/help#trivia':
+      return '<p>' . t('Configuracion modulo trivia', array('storage' => 'Configuracion modulo trivia' )) . '</p>';
+  }
+}
+
+/**
+ * Implements hook_permission().
+ */
+function trivia_permission() {
+  return array(
+    'administer trivia' =>  array(
+      'title' => t('Administer trivia'),
+      'description' => t('Perform administration trivia'),
+    ),
+  );
+}
+
+/**
+ * Implements hook_theme().
+ */
+function trivia_theme($existing, $type, $theme, $path) {
+  $themes = array (
+    'trivia_template' => array(
+      'path' =>  drupal_get_path('module', 'trivia'),
+      'template' => 'templates/reply',
+      'variables' => array(),
+      'arguments' => array(),
+    ),
+    'trivia_count' => array(
+      'path' =>  drupal_get_path('module', 'trivia'),
+      'template' => 'templates/count',
+      'variables' => array(),
+      'arguments' => array(),
+    ),
+  );
+  return $themes;
+}
+
+/**
+ * Implements hook_menu().
+ */
+function trivia_menu() {
+  $items = array();
+  $items['reply'] = array(
+    'page callback' => 'trivia_reply_page',
+    'page arguments' => array(),
+    'access arguments' => array('access content'), 
+    'type' => MENU_NORMAL_ITEM,
+  );
+  $items['ajax_reply'] = array(
+    'access callback' => TRUE,
+    'page callback' => 'ajax_reply_callback',
+    'type' => MENU_CALLBACK
+  );
+ 
+  $items['admin/config/trivia'] = array(
+    'title' => t('Configuration @module Trivia'),
+    'description' => t('Configuration Trivia'),
+    'page callback' => 'drupal_get_form', 
+    'page arguments' => array('trivia_config'), 
+    'access callback' => TRUE
+  );
+
+  return $items;
+}
+
+/**
+ * Implements hook_enable().
+ */
+function trivia_enable() {
+  variable_set('quiz_auto_revisioning', false);
+}
+
+/**
+ * Implements hook_user_insert().
+ */
+function trivia_user_insert(&$edit, $account, $category) {
+  return trivia_manage_players($edit, $account, $category); 
+}
+
+/**
+ * Implements hook_form_alter().
+ */
+function trivia_form_alter(&$form, &$form_state, $form_id) {
+  if ($form_id == 'user_register_form' && current_path() == 'user/register') {
+      $form['actions']['submit']['#attributes']['class'][] = 'hidden';
+  }
+  if ($form_id == 'quiz_question_answering_form') {
+      trivia_alter_question_true_false($form, $form_state, $form_id);
+  }
+}
+
+/**
+ * Implements hook_user_logout().
+ */
+function trivia_user_logout($account) {
+  $result = db_select('quiz_node_results', 'c')
+    ->fields('c')
+    ->condition('uid', $account->uid,'=')
+    ->condition('is_evaluated', false, '=')
+    ->execute()
+    ->fetchAssoc();
+    if ($result['is_evaluated'] == false) {
+        $rs = db_update('quiz_node_results')
+          ->fields(array(
+          'is_evaluated' => true
+        ))
+        ->condition('uid', $account->uid, '=')
+        ->execute();         
+    } 
+}

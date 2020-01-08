@@ -1,0 +1,14 @@
+name = Trivia
+description =  Evaluate actions Trivia
+package = Procolombia-Trivia
+core = 7.x
+; dependencies
+dependencies[] = entity
+dependencies[] = field
+;Config
+configure = admin/config/trivia
+; Information added by Drupal.org packaging script on 2019-01-24
+version = "7.x-2.12"
+core = "7.x"
+project = "rules"
+datestamp = "1548305586"
